@@ -29,6 +29,7 @@ This is a .Net Core MVC hosted Angular SPA with a fake in memory database that i
 2. Clone the repository to your computer
 3. Open the folder (visual studio code) or project (visual studio 2017) in your IDE
 4. This should kick off a `dotnet restore` automatically, but if not manually run that in a command prompt
+4. Run `npm install`
 5. Hit F5 (or run `ng serve` if you're not in one of the visual studios)
 6. You should hopefully be viewing the project in your browser after the build finishes.
    * Client side changes (HTML, TS files) automatically refresh your browser and appear in seconds after hitting save
