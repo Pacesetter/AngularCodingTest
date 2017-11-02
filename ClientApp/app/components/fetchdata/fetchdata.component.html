@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let forecast of forecasts">
-            <td>{{ forecast.date | date: "dd/MM/yyyy HH:mm" }}</td>
+            <td>{{ forecast.date | date: "medium" }}</td>
             <td>{{ forecast.temperatureC }}</td>
             <td>{{ forecast.temperatureF }}</td>
             <td>{{ forecast.summary }}</td>
@@ -25,5 +25,5 @@
     </tbody>
 </table>
 <h3>TODO</h3>
-<p>Be able to add a temperature. It can be randomized by just clicking an add button, or you can use the horrible built in browser
-    date pickers. No need to hunt for a datepicker and implement it.</p>
+<p>Be able to add a temperature. It can be randomized by just clicking an add button, or you can use a plain text field. No
+    need to hunt for a datepicker and implement it.</p>

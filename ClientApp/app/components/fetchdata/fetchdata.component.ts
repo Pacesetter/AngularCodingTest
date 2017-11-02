@@ -1,23 +1,19 @@
-import { Component, Inject } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Http } from "@angular/http";
+import { IWeatherForecast, WeatherService } from "../../services/weather.service";
 
 @Component({
     selector: "fetchdata",
     templateUrl: "./fetchdata.component.html"
 })
-export class FetchDataComponent {
-    public forecasts: WeatherForecast[];
+export class FetchDataComponent implements OnInit {
+    public forecasts: IWeatherForecast[];
 
-    constructor(http: Http, @Inject("BASE_URL") baseUrl: string) {
-        http.get(baseUrl + "api/WeatherData/Forecasts").subscribe(result => {
-            this.forecasts = result.json() as WeatherForecast[];
+    constructor(public http: Http, public weatherService: WeatherService) { }
+
+    ngOnInit(): void {
+        this.weatherService.getForecasts().subscribe(result => {
+            this.forecasts = result;
         }, error => console.error(error));
     }
-}
-
-interface WeatherForecast {
-    date: Date;
-    temperatureC: number;
-    temperatureF: number;
-    summary: string;
 }
