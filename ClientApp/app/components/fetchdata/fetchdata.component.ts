@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { Http } from "@angular/http";
 import { IWeatherForecast, WeatherService } from "../../services/weather.service";
 
 @Component({
@@ -9,7 +8,7 @@ import { IWeatherForecast, WeatherService } from "../../services/weather.service
 export class FetchDataComponent implements OnInit {
     public forecasts: IWeatherForecast[];
 
-    constructor(public http: Http, public weatherService: WeatherService) { }
+    constructor(public weatherService: WeatherService) { }
 
     ngOnInit(): void {
         this.weatherService.getForecasts().subscribe(result => {
