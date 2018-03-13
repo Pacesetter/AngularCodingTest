@@ -2,11 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { IWeatherForecast, WeatherService } from "../../services/weather.service";
 
 @Component({
-    selector: "fetchdata",
-    templateUrl: "./fetchdata.component.html"
+    selector: "weather",
+    templateUrl: "./weather.component.html"
 })
-export class FetchDataComponent implements OnInit {
-    public forecasts: IWeatherForecast[];
+export class WeatherComponent implements OnInit {
+    forecasts: IWeatherForecast[] = [];
 
     constructor(public weatherService: WeatherService) { }
 
